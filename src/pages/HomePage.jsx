@@ -1,7 +1,24 @@
+import MovieList from '../components/MovieList/MovieList';
+
+import { useEffect, useState } from 'react';
+import { fetchTrend } from '../services/movieService';
+
 export default function HomePage() {
-    return (
-      <div>
-        <h1>Home page</h1>
-      </div>
-    );
+  const [moviesList, setMoviesList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchTrend()
+      .then(data => setMoviesList(data.results))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  return (
+    <div>
+      <h2>Trending today:</h2>
+      {isLoading && <p>Loading...</p>}
+      <MovieList moviesList={moviesList} />
+    </div>
+  );
 }

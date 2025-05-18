@@ -41,7 +41,7 @@ export const fetchSearch = async (query, page = 1) => {
 
 export const fetchMovDetails = async (movieId) => {
   const res = await axios
-    .get(`movie/${movieId}`, { // Исправленный вариант
+    .get(`movie/${movieId}`, { 
       params: options.params,
       headers: options.headers,
     })
@@ -50,9 +50,9 @@ export const fetchMovDetails = async (movieId) => {
   return res;
 };
  
-export const fetchMovCast = async movieId  => {
+export const fetchMovCast = async (movieId)  => {
   const res = await axios
-    .get("movie/${movieId}/credits", {
+    .get(`movie/${movieId}/credits`, {
       params: options.params,
       headers: options.headers,
     })
@@ -61,9 +61,9 @@ export const fetchMovCast = async movieId  => {
   return res;
 };
  
-export const fetchMovRev = async movieId  => {
+export const fetchMovRev = async (movieId, page = 1)  => {
   const res = await axios
-    .get("movie/${movieId}/reviews", {
+    .get(`movie/${movieId}/reviews`, {
       params: {
         ...options.params,
         page: page,

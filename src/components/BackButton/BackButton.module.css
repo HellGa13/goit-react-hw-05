@@ -1,0 +1,19 @@
+.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ddfeff;
+    /* Класичний синій колір */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ec8db4;
+    /* Темніший відтінок при наведенні */
+}

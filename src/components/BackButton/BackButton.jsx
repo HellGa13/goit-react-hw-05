@@ -3,7 +3,7 @@ import css from './BackButton.module.css';
 
 export default function BackButton({ to }) {
   return (
-    <NavLink to={to} className={css.button}>
+    <NavLink to={to} className={css.btn}>
       Go back
     </NavLink>
   );

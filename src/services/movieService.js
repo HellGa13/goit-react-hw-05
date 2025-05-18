@@ -39,9 +39,9 @@ export const fetchSearch = async (query, page = 1) => {
   return res;
 };
 
-export const fetchMovDetails = async movieId  => {
+export const fetchMovDetails = async (movieId) => {
   const res = await axios
-    .get("movie/${movieId}", {
+    .get(`movie/${movieId}`, { // Исправленный вариант
       params: options.params,
       headers: options.headers,
     })

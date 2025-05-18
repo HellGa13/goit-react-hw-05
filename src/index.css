@@ -14,3 +14,13 @@ img {
   max-width: 100%;
   object-fit: contain;
 }
+
+a {
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #dd0042;
+}
